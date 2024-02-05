@@ -20,17 +20,17 @@ public class Config {
 	}
 
 	@Bean
-	public BreedDao getBreedDao(BreedDao breedDao){
+	public BreedDao getBreedDao(){
 			return new MysqlBreedDao(jdbcTemplate);
 	}
 	
-	/*@Bean
+	@Bean
 	public TypeActivityDao getTypeActivityDao(TypeActivityDao typeActivityDao){
-		return new MysqlTypeActivityDao(jdbcTemplate);
+		return new MysqlTypeActivityDao(jdbcTemplate, typeActivityDao);
 	}
 	
 	@Bean
 	public UserDao getUseDao(UserDao userDao){	
-		return new MysqlUserDao(jdbcTemplate);
-	}*/
+		return new MysqlUserDao(jdbcTemplate, userDao);
+	}
 }

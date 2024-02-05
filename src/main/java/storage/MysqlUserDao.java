@@ -18,10 +18,12 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 public class MysqlUserDao implements UserDao {
 
     private JdbcTemplate jdbcTemplate;
-
-    public MysqlUserDao(JdbcTemplate jdbcTemplate) {
+    private UserDao userDao;
+    
+    public MysqlUserDao(JdbcTemplate jdbcTemplate, UserDao userDao) {
 
         this.jdbcTemplate = jdbcTemplate;
+        this.userDao = userDao;
     }
 
     @Override

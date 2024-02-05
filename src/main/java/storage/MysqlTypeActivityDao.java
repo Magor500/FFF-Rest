@@ -11,9 +11,11 @@ import java.util.List;
 
 public class MysqlTypeActivityDao implements TypeActivityDao{
     private JdbcTemplate jdbcTemplate;
+    private TypeActivityDao typeActivityDao;
 
-    public MysqlTypeActivityDao(JdbcTemplate jdbcTemplate) {
+    public MysqlTypeActivityDao(JdbcTemplate jdbcTemplate, TypeActivityDao typeActivityDao) {
         this.jdbcTemplate = jdbcTemplate;
+        this.typeActivityDao = typeActivityDao;
     }
 
     @Override
