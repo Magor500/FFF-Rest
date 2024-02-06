@@ -13,6 +13,10 @@ public class MysqlTypeActivityDao implements TypeActivityDao{
     private JdbcTemplate jdbcTemplate;
     private TypeActivityDao typeActivityDao;
 
+    public MysqlTypeActivityDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+    
     public MysqlTypeActivityDao(JdbcTemplate jdbcTemplate, TypeActivityDao typeActivityDao) {
         this.jdbcTemplate = jdbcTemplate;
         this.typeActivityDao = typeActivityDao;

@@ -25,12 +25,12 @@ public class Config {
 	}
 	
 	@Bean
-	public TypeActivityDao getTypeActivityDao(TypeActivityDao typeActivityDao){
-		return new MysqlTypeActivityDao(jdbcTemplate, typeActivityDao);
+	public TypeActivityDao getTypeActivityDao(){
+		return new MysqlTypeActivityDao(jdbcTemplate);
 	}
 	
 	@Bean
-	public UserDao getUseDao(UserDao userDao){	
-		return new MysqlUserDao(jdbcTemplate, userDao);
+	public UserDao getUserDao(){	
+		return new MysqlUserDao(jdbcTemplate);
 	}
 }

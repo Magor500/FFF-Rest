@@ -2,6 +2,7 @@ package storage;
 
 import java.util.List;
 
+
 public interface BreedDao {
     List<Breed> getAll();
 

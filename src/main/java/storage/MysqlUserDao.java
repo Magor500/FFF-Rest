@@ -13,12 +13,18 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
+
 //TODO: Podľa potreby doplniť metódy
 
 public class MysqlUserDao implements UserDao {
 
     private JdbcTemplate jdbcTemplate;
     private UserDao userDao;
+    
+    public MysqlUserDao(JdbcTemplate jdbcTemplate) {
+
+        this.jdbcTemplate = jdbcTemplate;
+    }
     
     public MysqlUserDao(JdbcTemplate jdbcTemplate, UserDao userDao) {
 

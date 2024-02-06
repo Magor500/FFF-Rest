@@ -9,32 +9,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import storage.Breed;
 import storage.BreedDao;
+import storage.TypeActivity;
+import storage.TypeActivityDao;
 
 @RestController
-public class BreedController {
+public class TypeActivityController {
+
+private final TypeActivityDao typeActivityDao;
 	
-	private final BreedDao breedDao;
-	
-	public BreedController(BreedDao breedDao) {
-		this.breedDao = breedDao;
+	public TypeActivityController(TypeActivityDao typeActivityDao) {
+		this.typeActivityDao = typeActivityDao;
 	}
 
-	@GetMapping("/breeds/getAll")
-	public List<Breed> getAll() {
-		return breedDao.getAll(); 
+	@GetMapping("/typeActivities/getAll")
+	public List<TypeActivity> getAll() {
+		return typeActivityDao.getAll(); 
 	}
 	
-	@PostMapping("/breeds/save")
-	public Breed save(@RequestBody Breed breed) {
-		return breedDao.save(breed);
-	}
-	
-	@DeleteMapping("/breeds/{id}")
-	public void delete(@PathVariable long id) {
-		breedDao.delete(id);
+	@GetMapping("/typeActivities/{id}")
+	public void getById(@PathVariable long id) {
+		typeActivityDao.getById(id);
 	}
 
 }
